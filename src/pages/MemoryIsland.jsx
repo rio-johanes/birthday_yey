@@ -377,11 +377,11 @@ export default function MemoryIsland() {
       );
       context.restore();
       const captured = canvas.toDataURL("image/jpeg", 0.84);
-      setPhotos((current) =>
-        current.map((photo, index) =>
-          index === selectedSlot ? captured : photo,
-        ),
+      const updatedPhotos = photos.map((photo, index) =>
+        index === selectedSlot ? captured : photo,
       );
+      setPhotos(updatedPhotos);
+      if (updatedPhotos.every(Boolean)) completeMission("memories");
       const nextEmpty = photos.findIndex(
         (photo, index) => !photo && index !== selectedSlot,
       );
@@ -421,11 +421,13 @@ export default function MemoryIsland() {
           drawWidth,
           drawHeight,
         );
-        setPhotos((current) =>
-          current.map((photo, photoIndex) =>
+        setPhotos((current) => {
+          const updated = current.map((photo, photoIndex) =>
             photoIndex === index ? canvas.toDataURL("image/jpeg", 0.84) : photo,
-          ),
-        );
+          );
+          if (updated.every(Boolean)) completeMission("memories");
+          return updated;
+        });
         setSelectedSlot(Math.min(index + 1, PHOTO_COUNT - 1));
         setNotice(`Foto ${index + 1} berhasil ditambahkan! ♡`);
       };
