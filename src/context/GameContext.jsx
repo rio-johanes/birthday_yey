@@ -1,10 +1,11 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
-const STORAGE_KEY = 'little-birthday-adventure-progress-v1';
+const STORAGE_KEY = "little-birthday-adventure-progress-v1";
 
 const initialProgress = {
   garden: false,
   memories: false,
+  photocard: false,
   cake: false,
   giftOpened: false,
 };
@@ -15,7 +16,9 @@ export function GameProvider({ children }) {
   const [progress, setProgress] = useState(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      return saved ? { ...initialProgress, ...JSON.parse(saved) } : initialProgress;
+      return saved
+        ? { ...initialProgress, ...JSON.parse(saved) }
+        : initialProgress;
     } catch {
       return initialProgress;
     }
@@ -38,23 +41,30 @@ export function GameProvider({ children }) {
     localStorage.removeItem(STORAGE_KEY);
   };
 
-  const completedCount = [progress.garden, progress.memories, progress.cake].filter(Boolean).length;
-  const value = useMemo(() => ({
-    progress,
-    completedCount,
-    completeMission,
-    openGift,
-    resetProgress,
-    isMemoryUnlocked: progress.garden,
-    isCakeUnlocked: progress.garden && progress.memories,
-    isCastleUnlocked: progress.garden && progress.memories && progress.cake,
-  }), [progress, completedCount]);
+  const completedCount = [
+    progress.garden,
+    progress.memories,
+    progress.cake,
+  ].filter(Boolean).length;
+  const value = useMemo(
+    () => ({
+      progress,
+      completedCount,
+      completeMission,
+      openGift,
+      resetProgress,
+      isMemoryUnlocked: progress.garden,
+      isCakeUnlocked: progress.garden && progress.memories,
+      isCastleUnlocked: progress.garden && progress.memories && progress.cake,
+    }),
+    [progress, completedCount],
+  );
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 }
 
 export function useGame() {
   const context = useContext(GameContext);
-  if (!context) throw new Error('useGame must be used inside GameProvider');
+  if (!context) throw new Error("useGame must be used inside GameProvider");
   return context;
 }
