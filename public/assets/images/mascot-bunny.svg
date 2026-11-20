@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 460" role="img" aria-label="Bubu, kelinci lucu">
+  <defs>
+    <linearGradient id="fur" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#ffeaf2"/></linearGradient>
+    <linearGradient id="ear" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffd5e5"/><stop offset="1" stop-color="#f6a9c8"/></linearGradient>
+    <linearGradient id="bow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffb1d0"/><stop offset="1" stop-color="#ec78a8"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="9"/></filter>
+  </defs>
+  <ellipse cx="210" cy="420" rx="125" ry="22" fill="#a77eaa" opacity=".13" filter="url(#shadow)"/>
+  <!-- ears -->
+  <path d="M119 164 C80 95 88 10 135 16 C180 22 178 104 177 159Z" fill="url(#fur)" stroke="#e8cbd8" stroke-width="5"/>
+  <path d="M126 133 C105 75 112 36 133 38 C153 41 158 94 158 138Z" fill="url(#ear)"/>
+  <path d="M253 158 C240 87 257 19 300 31 C341 43 324 125 291 174Z" fill="url(#fur)" stroke="#e8cbd8" stroke-width="5"/>
+  <path d="M274 137 C268 78 283 52 301 55 C320 59 309 112 291 145Z" fill="url(#ear)"/>
+  <!-- body -->
+  <ellipse cx="211" cy="319" rx="116" ry="112" fill="url(#fur)" stroke="#e8cbd8" stroke-width="5"/>
+  <ellipse cx="211" cy="348" rx="66" ry="72" fill="#fff7fa"/>
+  <ellipse cx="126" cy="352" rx="35" ry="44" fill="url(#fur)" stroke="#e8cbd8" stroke-width="4"/>
+  <ellipse cx="293" cy="352" rx="35" ry="44" fill="url(#fur)" stroke="#e8cbd8" stroke-width="4"/>
+  <!-- face -->
+  <ellipse cx="210" cy="207" rx="119" ry="108" fill="url(#fur)" stroke="#e8cbd8" stroke-width="5"/>
+  <ellipse cx="163" cy="224" rx="13" ry="19" fill="#74566b"/>
+  <ellipse cx="257" cy="224" rx="13" ry="19" fill="#74566b"/>
+  <circle cx="158" cy="218" r="4" fill="#fff"/><circle cx="252" cy="218" r="4" fill="#fff"/>
+  <ellipse cx="128" cy="254" rx="19" ry="10" fill="#f6b5cb" opacity=".75"/><ellipse cx="290" cy="254" rx="19" ry="10" fill="#f6b5cb" opacity=".75"/>
+  <path d="M200 248 Q210 238 220 248 Q217 261 210 261 Q203 261 200 248Z" fill="#ed91b2"/>
+  <path d="M210 260 Q197 276 185 264 M210 260 Q223 276 235 264" fill="none" stroke="#8c647c" stroke-width="4" stroke-linecap="round"/>
+  <!-- bow -->
+  <path d="M107 103 C70 70 48 103 81 129 L118 141Z" fill="url(#bow)" stroke="#df729e" stroke-width="4"/>
+  <path d="M118 140 C132 91 166 91 158 126 L130 153Z" fill="url(#bow)" stroke="#df729e" stroke-width="4"/>
+  <circle cx="119" cy="132" r="14" fill="#f7a4c5" stroke="#df729e" stroke-width="4"/>
+  <!-- little paws and heart -->
+  <path d="M160 331 Q180 300 201 330 L202 367 Q174 378 160 355Z" fill="#fff" stroke="#e8cbd8" stroke-width="4"/>
+  <path d="M222 330 Q244 300 263 331 L263 355 Q245 379 219 367Z" fill="#fff" stroke="#e8cbd8" stroke-width="4"/>
+  <path d="M211 346 C195 328 176 341 185 360 C193 376 211 386 211 386 C211 386 230 375 238 359 C247 340 226 329 211 346Z" fill="#f48bb3" stroke="#e477a4" stroke-width="3"/>
+  <path d="M325 194 Q345 174 361 193 Q378 215 346 240 L325 255 L305 238 Q279 213 297 194 Q311 180 325 194Z" fill="#f8a6c6" opacity=".85"/>
+  <path d="M68 284 L75 267 L82 284 L99 291 L82 298 L75 315 L68 298 L51 291Z" fill="#f6cd7e"/>
+</svg>
