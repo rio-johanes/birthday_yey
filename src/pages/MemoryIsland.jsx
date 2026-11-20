@@ -659,11 +659,6 @@ export default function MemoryIsland() {
               </div>
             ))}
           </div>
-          <p className="photobooth-note">
-            Kamera perlu diakses melalui <b>localhost</b> atau website yang
-            sudah menggunakan <b>HTTPS</b>. Kalau tidak bisa, gunakan tombol
-            Upload di setiap slot.
-          </p>
         </div>
 
         <aside className="photocard-design-panel">
